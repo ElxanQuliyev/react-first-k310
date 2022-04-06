@@ -1,23 +1,16 @@
-import { useState } from 'react';
 import './App.scss';
-import Product from './components/Product';
+import Footer from './components/footer/Footer';
+import Header from './components/header/Header';
+import HeroSlider from './components/hero-slider/HeroSlider';
+import Home from './pages/Home';
 
 function App() {
-  let arr=["Iphone","Samsung","Huawai"]
-  const [phones, setphones] = useState(arr)
-  const [searchText, setsearchText] = useState("")
-  const addHandler =()=>{
-    setphones(old=>[...old,searchText])
-  } 
+
   return (
-    <div className=''>
-        {phones.map((c,i)=>(
-          <div key={i} className='product'>
-            <p>{c}</p>
-          </div>
-        ))}
-      <input placeholder='text...' onChange={(e)=>setsearchText(e.target.value)}/>
-      <button onClick={addHandler}>Click</button>
+    <div>
+        <Header/>
+        <Home/>
+        <Footer/>
     </div>
     );  
 }
